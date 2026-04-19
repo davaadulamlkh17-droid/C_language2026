@@ -6,11 +6,7 @@ int main() {
     int n = 5;
 
     char filename[] = "numbers.txt";
-
-    // файлд бичих
     write_numbers(filename, arr, n);
-
-    // файлаас унших
     read_numbers(filename);
 
     return 0;
