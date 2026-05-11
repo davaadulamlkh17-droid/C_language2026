@@ -1,22 +1,16 @@
 #include <stdio.h>
 #include <stdarg.h>
-
-double average(int n, ...) {
+double average(int n, ...){
     va_list args;
     va_start(args, n);
-
-    double sum = 0;
-
-    for (int i = 0; i < n; i++) {
-        sum += va_arg(args, int);
+    int sum=0;
+    for (int i = 0; i < n; i++)
+    {
+        sum=sum+va_arg(args, int);
     }
-
     va_end(args);
-
-    return sum / n;
+    return (double)sum/n;
 }
-
-int main() {
-    printf("%.2f\n", average(4, 10, 20, 30, 40));
-    return 0;
+int main(){
+    printf("%.1f\n", average(5,4,3,45,12,3));
 }
